@@ -1,0 +1,238 @@
+<!--
+
+    This page is a character profile form.
+    Once the user clicks a submit button, it will shows the character profile in a document format.
+    The fields are specific to my own worldbuilding needs.
+
+-->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta charset="utf-8">
+        <meta name="description" content="Form for creating character profile.">
+        <title> Character Profile Form </title>
+        <style id="styling">
+            body {
+                font-family: "Bookman Old Style";
+                background-color: beige;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+            
+            input {
+                font-family: "Bookman Old Style";
+                font-size: 16px;
+                display: table-cell;
+            }
+            .demographicsInput {
+                display: inline-block;
+                width: 150px;
+                text-align: left;
+            }
+            .physAppearanceInput {
+                display: inline-block;
+                width: 200px;
+                text-align: left;
+            }
+            .historyInput {
+                display: inline-block;
+                width: 150px;
+                text-align: left;
+            }
+            .relationshipInput {
+                display: inline-block;
+                width: 170px;
+                text-align: left;
+            }
+            .displayOutput {
+                display: none;
+            }
+
+            
+
+        </style>
+    </head>
+
+    <body>
+        <script type = "text/javascript" src="printForm.js"></script>
+        
+        <header class="header">
+            <h1> Character Profile Creator </h1>
+            <p> Fill the character's information in the form and click submit for a final display. </p>
+            <p> This form aim to help me explore characters' personality and possible development.
+                It can also be used for brainstorming character background, plot line, and interactions. </p>
+            <p> To save the result, select 'print' option from your browser after pressing Submit. </p>
+        </header>
+
+        <br>
+
+        <!-- <form action="/action_page.php">
+            <label for="img"> Select image </label>
+            <input type="file" id="img" name="img" accept="image/*">
+            <input type="submit">
+        </form> -->
+
+        <form class="characterform" id="characterform">
+
+            <section class="demographics">
+                <h2> Demographics </h2>
+                <p><label class="demographicsInput"> First name </label><input type="text" id="firstname" autocomplete="on"></p>
+                <p><label class="demographicsInput"> Middle name </label><input type="text" id="middlename"> </p>
+                <p><label class="demographicsInput"> Last name </label><input type="text" id="lastname"> </p>
+                <p><label class="demographicsInput"> Other names </label><input type="text" id="othernames"> </p>
+                <p><label class="demographicsInput"> Title/Honorifics </label><input type="text" id="titlehonorifics"> </p>
+                <p><label class="demographicsInput"> Sex/Gender </label><input type="text" id="sexgender"> </p>
+                <p><label class="demographicsInput"> Bloodline </label><input type="text" id="bloodline"> </p>
+                <p><label for="affiliation" class="demographicsInput"> Affiliation </label>
+                    <select id="affiliation" name="affiliation">
+                        <option value="Eshasanti"> Eshasanti </option>
+                        <option value="Sanyaseri"> Sanyaseri </option>
+                        <option value="NonAffiliated"> No Affiliation </option>
+                    </select>
+                </p>
+                <p><label class="demographicsInput"> Occupation </label><input type="text" id="occupation"> </p>
+                <p><label class="demographicsInput"> Education </label><input type="text" id="education"> </p>
+                <p><label class="demographicsInput"> Notes </label><input type="text" id="demographicsnote"></p>
+            </section>
+
+            <br>
+
+            <section class="physAppearance">
+                <h2> Physical Appearance </h2>
+                <p><label class="physAppearanceInput"> Eye color </label><input type="text" id="eyecolor"> </p>
+                <p><label class="physAppearanceInput"> Skin color </label><input type="text" id="skincolor"> </p>
+                <p><label class="physAppearanceInput"> Hair color </label><input type="text" id="haircolor"> </p>
+                <p><label class="physAppearanceInput"> Height </label><input type="number" id="height"> </p>
+                <p><label class="physAppearanceInput"> Weight </label><input type="number" id="weight"> </p>
+                <p><label class="physAppearanceInput"> Facial Marking </label><input type="text" id="facialmarking"> </p>
+                <p><label class="physAppearanceInput"> Scars </label><input type="text" id="scars"> </p>
+                <p><label class="physAppearanceInput"> Distinguished features </label><input type="text" id="distingfeatures"> </p>
+                <p><label class="physAppearanceInput"> Body Type </label><input type="text" id="bodytype"> </p>
+                <p><label class="physAppearanceInput"> Fashion style </label><input type="text" id="fashionstyle"> </p>
+                <p><label class="physAppearanceInput"> Accessories </label><input type="text" id="accessories"> </p>
+                <p><label class="physAppearanceInput"> Posture </label><input type="text" id="posture"> </p>
+                <p><label class="physAppearanceInput"> Weaknesses </label><input type="text" id="weaknesses"> </p>
+                <p><label class="physAppearanceInput"> Notes </label><input type="text" id="physappearancenote"> </p>
+            </section>
+
+            <br>
+
+            <section class="history">
+                <h2> History </h2>
+                <p><label class="historyInput"> Birth date </label><input type="text" id="birthdate"> </p>
+                <p><label class="historyInput"> Birth place </label><input type="text" id="birthplace"> </p>
+                <p><label class="historyInput"> Immediate family </label><input type="text" id="immediatefamily"> </p>
+                <p><label class="historyInput"> Note </label><input type="text" id="historynote"> </p>
+            </section>
+
+            <section class="relationships">
+                <h2> Relationships </h2>
+                <p><label class="relationshipInput"> Father </label><input type="text" id="father"> </p>
+                <p><label class="relationshipInput"> Mother </label><input type="text" id="mother"> </p>
+                <p><label class="relationshipInput"> Legal Guardian </label><input type="text" id="legalguardian"> </p>
+                <p><label class="relationshipInput"> Lover(s) </label><input type="text" id="lovers"> </p>
+                <p><label class="relationshipInput"> Children </label><input type="text" id="children"> </p>
+                <p><label class="relationshipInput"> Grandparents </label><input type="text" id="grandparents"> </p>
+                <p><label class="relationshipInput"> Grandchildren </label><input type="text" id="grandchildren"> </p>
+                <p><label class="relationshipInput"> Best friends </label><input type="text" id="bestfriends"> </p>
+                <p><label class="relationshipInput"> Friends </label><input type="text" id="friends"> </p>
+                <p><label class="relationshipInput"> Rivals </label><input type="text" id="rivals"> </p>
+                <p><label class="relationshipInput"> Enemies </label><input type="text" id="enemies"> </p>
+                <p><label class="relationshipInput"> Colleagues </label><input type="text" id="colleagues"> </p>
+                <p><label class="relationshipInput"> Superiors </label><input type="text" id="superiors"> </p>
+                <p><label class="relationshipInput"> Mentors </label><input type="text" id="mentors"> </p>
+                <p><label class="relationshipInput"> Role models </label><input type="text" id="rolemodels"> </p>
+                <p><label class="relationshipInput"> Subordinates </label><input type="text" id="subordinates"> </p>
+                <p><label class="relationshipInput"> Pets </label><input type="text" id="pets"> </p>
+                <p><label class="relationshipInput"> Combat animals </label><input type="text" id="combatanimals"> </p>
+                <p><label class="relationshipInput"> Acquaintances </label><input type="text" id="acquaintances"> </p>
+                <p><label class="relationshipInput"> Public perception </label><input type="text" id="publicperception"> </p>
+                <p><label class="relationshipInput"> Note </label><input type="text" id="relationshipsnote"> </p>
+            </section>
+            
+            <input type="submit" value="Submit" onclick="displayResult()">
+
+        </form>
+
+        <section class="displayOutput" id="dispOutput">
+            <section>
+                <h2> Demographics </h2>
+                <p id="firstnameOut"><b> First name: </b></p>
+                <p id="middlenameOut"><b> Middle name: </b></p>
+                <p id="lastnameOut"><b> Last name: </b></p>
+                <p id="othernamesOut"><b> Other names: </b></p>
+                <p id="titlehonorificsOut"><b> Title/Honorifics: </b></p>
+                <p id="sexgenderOut"><b> Sex/Gender: </b></p>
+                <p id="bloodlineOut"><b> Bloodline: </b></p>
+                <p id="affiliationOut"><b> Affiliation: </b></p>
+                <p id="occupationOut"><b> Occupation: </b></p>
+                <p id="educationOut"><b> Education: </b></p>
+                <p id="demographicsnoteOut"><b> Note: </b></p>
+            </section>
+
+            <br>
+
+            <section>
+                <h2> Physical Appearance </h2>
+                <p id="eyecolorOut"><b> Eye color: </b></p>
+                <p id="skincolorOut"><b> Skin color: </b></p>
+                <p id="haircolorOut"><b> Hair color: </b></p>
+                <p id="heightOut"><b> Height: </b></p>
+                <p id="weightOut"><b> Weight: </b></p>
+                <p id="facialmarkingOut"><b> Facial marking: </b></p>
+                <p id="scarsOut"><b> Scars: </b></p>
+                <p id="distingfeaturesOut"><b> Distinguished features: </b></p>
+                <p id="bodytypeOut"><b> Body type: </b></p>
+                <p id="fashionstyleOut"><b> Fashion style: </b></p>
+                <p id="accessoriesOut"><b> Accessories: </b></p>
+                <p id="postureOut"><b> Posture: </b></p>
+                <p id="weaknessesOut"><b> Weaknesses: </b></p>
+                <p id="physappearancenoteOut"><b> Note: </b></p>
+            </section>
+
+            <br>
+
+            <section>
+                <h2> History </h2>
+                <p id="birthdateOut"><b> Birth date: </b></p>
+                <p id="birthplaceOut"><b> Birth place: </b></p>
+                <p id="immediatefamilyOut"><b> Immediate family: </b></p>
+                <p id="historynoteOut"><b> Note: </b></p>
+            </section>
+
+            <br>
+
+            <section>
+                <h2> Relationships </h2>
+                <p id="fatherOut"><b> Father: </b></p>
+                <p id="motherOut"><b> Mother: </b></p>
+                <p id="legalguardianOut"><b> Legal guardian: </b></p>
+                <p id="loversOut"><b> Lover(s): </b></p>
+                <p id="childrenOut"><b> Children: </b></p>
+                <p id="grandparentsOut"><b> Grandparents: </b></p>
+                <p id="grandchildrenOut"><b> Grandchildren: </b></p>
+                <p id="bestfriendsOut"><b> Best friends: </b></p>
+                <p id="friendsOut"><b> Friends: </b></p>
+                <p id="rivalsOut"><b> Rivals: </b></p>
+                <p id="enemiesOut"><b> Enemies: </b></p>
+                <p id="colleaguesOut"><b> Colleagues: </b></p>
+                <p id="superiorsOut"><b> Superiors: </b></p>
+                <p id="mentorsOut"><b> Mentors: </b></p>
+                <p id="rolemodelsOut"><b> Role models: </b></p>
+                <p id="subordinatesOut"><b> Subordinates: </b></p>
+                <p id="petsOut"><b> Pets: </b></p>
+                <p id="combatanimalsOut"><b> Combat animals: </b></p>
+                <p id="acquaintancesOut"><b> Acquaintances: </b></p>
+                <p id="publicperceptionOut"><b> Public perception </b></p>
+                <p id="relationshipsnoteOut"><b> Note: </b></p>
+            </section>
+        </section>
+
+        
+        
+    </body>
+</html>

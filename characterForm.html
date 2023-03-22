@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html">
         <meta charset="utf-8">
         <meta name="description" content="Form for creating character profile.">
+        <script type = "text/javascript" src="printForm.js" defer></script>
         <title> Character Profile Form </title>
         <style id="styling">
             body {
@@ -22,7 +23,9 @@
                 margin-left: 50px;
                 margin-right: 50px;
             }
-            
+            button {
+                font-family: "Bookman Old Style";
+            }
             input {
                 font-family: "Bookman Old Style";
                 font-size: 16px;
@@ -52,13 +55,11 @@
                 display: none;
             }
 
-            
-
+        
         </style>
     </head>
 
     <body>
-        <script type = "text/javascript" src="printForm.js"></script>
         
         <header class="header">
             <h1> Character Profile Creator </h1>
@@ -154,7 +155,7 @@
                 <p><label class="relationshipInput"> Note </label><input type="text" id="relationshipsnote"> </p>
             </section>
             
-            <input type="submit" value="Submit" onclick="displayResult()">
+            <button id="formsubmit"> Submit </button>
 
         </form>
 

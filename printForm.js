@@ -1,4 +1,5 @@
 
+
 function displayDemographic() {
 
     document.getElementById("dispOutput").style.display = "inline";
@@ -182,3 +183,6 @@ function displayResult() {
     document.getElementById("characterform").remove();
 
 }
+
+const formSubmitButton = document.querySelector("#formsubmit");
+formSubmitButton.addEventListener("click", displayResult);

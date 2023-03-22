@@ -1,0 +1,173 @@
+<!--
+    A basic template consists of 2 parts:
+        1. head
+        2. body
+    Outside of root HTML, declaring the version of HTML to use via DOCTYPE is a must.
+
+    <head> is useful for visual styling and defining interactivity
+
+        <title> sets the text for the bar tab. There can only be 1 title element.
+            * Mandatory
+            * Very important to use title that descibe the page because the value within a title is also used in
+              a browser’s history system, recorded when the page is bookmarked, and consulted by search engine robots to help determine page meaning.
+            * When not specified, browser display the URL path/filename on the bar tab instead.
+            * Markup isn't interpreted in a title element, so we cannot format the bar tab with italics and bold, but character entities
+              are allowed.
+
+        <meta> specifies MIME type and character set fir displaying languages
+            * Is an empty element -> need a trailing / at the end.
+            * For standard HTML, the MIME type is always text/html.
+            * In the use of XHTML, you may choose from text/html, text/xml, application/xml, and application/xhtml+xml
+              as potential MIME types.
+            * Used to set arbitrary name-content pairs to provide meta-information about a document for purposes like 
+              search engine optimization
+
+        <base> specifies an absolute URL address that is used to provide server and directory information for partially specified URL addresses.
+            * Single occurence.
+
+        <link> specifies a special relationship between the current document and another document.
+            * Usually used to link a style sheet.
+
+        <object> allows programs and other binary objects to be directly embedded in a Web page.
+            * Ex. flash object, Java applets, plug-ins
+
+        <script> allows scripting language code to be either directly embedded within or linked to from a Web page.
+            * Can embed an actual JavaScript code into HTML
+            * OR can specify the file where the JavaScript is at (preferred)
+
+        <style> encloses document-wide style specifications, typically in Cascading Style Sheet (CSS) format
+            * Fonts, colors, positioning, and other aspects of content presentation
+
+        Comment tag is sensitive to dash character and cannot contain another comment tag inside it.
+
+    <body>
+        * Only 1 body element can appear per HTML document.
+        * block-level elements define structural content blocks such as paragraphs (p) or headings (h1-h6).
+            * generally introduce line breaks visually.
+            * within a non-empty block, inline elements are found. Ex. bold (b), italic (i), strong (strong), emphasis (em)
+            * In a block and in-line element, you may find textual content, including special characters that requires encoding.
+                All character codes take the form &code; where code is a word or numeric code indicating the actual character
+                    that you want to put onscreen.
+            * Types of elements that reference other objects can also be in the block.
+
+The web browser reads the HTML file by building a parse tree to interpret the structure of the document.
+    * The structure of the elements and tags can be represented by a tree.
+    * Parse tree is often called "DOM" (Document Object Model) tree.
+    * JavaScript will also use this parse tree when scripts attempt to manipulate the document
+
+    Example of a parse tree:
+
+        DOCTYPE
+            |-- HTML
+                  |-- HEAD
+                  |     |-- META
+                  |     |-- TITLE
+                  |     |    |-- "page title"
+                  |     |-- <comment>
+                  |
+                  |-- BODY
+                        |-- H1
+                        |    |-- "Welcome to the page."
+                        |-- HR
+                        |-- P
+                        |    |-- "HTML"
+                        |    |-- EM
+                        |    |    |-- "Is not so bad"
+                        |    |-- "right?"
+                        |-- P
+                             |-- "One more paragraph!"
+
+
+
+-->
+
+
+<!DOCTYPE html>
+
+<html>  <!-- Root HTML element encloses the entire document. -->
+
+    <head>
+        <!-- Head contains info about the page, such as metadata, content, charset,
+             and tags describing the document, such as page title -->
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta charset="utf-8">
+        <title>(X)HTML Template</title>
+        
+    </head>
+
+
+    <body>
+        <h1> (X)HTML Template Demo </h1>
+        <hr>
+        <p> If you want to see the template and example of using tags, see the HTML code for this page. </p>
+        <p> This line shows you how <i>italics</i> works inline! </p>
+        <p> Oh yeah, there's another way to do italics, but <em>emphasis</em>! The difference is that italics is just text formatting
+            while emphasis means you want to emphasize the word! </p>
+        <p> You can add special character using the escape character! Like this, &hearts; </p>
+        <p> About space, HTML doesn't care if you have soooo many spaces        , it will only show one space. </p>
+        <p> You can also <mark style="background-color: blueviolet;">highlight</mark> a text, like in your textbook.</p>
+        <p> To make sure both human and non-human can find meaningful representation, use datetime attribute for the non-human: 
+            <time datetime="2006-01-13">Friday the 13th</time>. </p>
+        <p> It's time we add some picture. </p>
+
+        <figure>
+            <dd>
+                <img src="tree.jpg" height="160" width="250" alt="It's a magic tree.">
+                <p> I use this picture as my home screen. </p>
+            </dd>
+            <dt> Fig. 1 </dt>
+        </figure>
+
+        <p> Navigating to other page is easy. </p>
+        <nav>
+            <p> List of offsite links </p>
+            <a href="https://www.google.com/"> Google </a><br>
+            <a href="https://www.yahoo.com/"> Yahoo </a><br>
+        </nav>
+
+        <h2> Let's play with user input </h2>
+
+        <p><label>Pick a color: <input type="color" name="favColor"></label></p>
+
+        <p><label>Pick a date: <input type="date" name="date"></label></p>
+
+        <p><label>Choose a number: <input type="number" name="number"></label></p>
+
+        <p><label>Choose a number with max and min limit: <input type="number" name="number2" min="-5" max="25" step="5"></label></p>
+
+        <p><label>Choose a number from range: <input type="range" name="range" max="100" min="1" step="5"></label></p>
+
+        <h3>Contact Info</h3>
+        <p><label>Telephone Number: <input type="tel" name="telno"></label></p>
+        <p><label>Email: <input type="email" name="email"></label></p>
+        <p><label>URL: <input type="url" name="url"></label></p>
+
+        <form>
+            <label for="noblank">You cannot leave this blank: </label>
+            <input type="text" name="noblank" required>
+            <input type="submit">
+        </form>
+
+        <p>
+            <label for="dogname">Choose Favorite Dog from choices: </label>
+            <select name="dogname">
+                <option>Angus</option>
+                <option>Tucker</option>
+                <option>Cisco</option>
+                <option>Sabrina</option>
+            </select>
+        </p>
+
+        <p><label>You can put default text in the form field: <input type="text" value="Thomas"></label></p>
+
+        <p><label>You can use a place holder for explanation: <input type="text" placeholder="Enter your name here"></label></p>
+
+        <p><label>Make the browser jump to the this particular input box with autofocus: <input type="search" autofocus></label></p>
+        
+        <p><label>Make autocomplete possible: <input type="text" placeholder="Enter your name here" autocomplete></label></p>
+
+        <p> Pretty cool right?! </p>
+    </body>
+
+
+</html>

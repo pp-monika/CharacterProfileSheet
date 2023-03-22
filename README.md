@@ -24,3 +24,7 @@ in the demographics section. However, aside from a few fields in the form, the m
 - HTML
 - CSS
 - Javascript
+
+### Sample Images
+![Form](sampleImages/form_sample.png)
+![Result](sampleImages/render_sample.png)

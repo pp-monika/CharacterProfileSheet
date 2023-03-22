@@ -26,5 +26,6 @@ in the demographics section. However, aside from a few fields in the form, the m
 - Javascript
 
 ### Sample Images
-![Form](sampleImages/form_sample.png)
-![Result](sampleImages/render_sample.png)
+<img width="891" alt="form_sample" src="https://user-images.githubusercontent.com/97570594/226971653-ecedb58f-71d8-4e88-9a44-d6c27d4228e3.PNG">
+<img width="876" alt="render_sample" src="https://user-images.githubusercontent.com/97570594/226971724-b88f6777-d540-4873-9aac-ebd11ffeeda3.PNG">
+

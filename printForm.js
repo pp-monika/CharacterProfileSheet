@@ -171,10 +171,24 @@ function displayRelationships() {
 
 }
 
+
+function formatCharacterImage() {
+
+    document.getElementById("characterImage").remove();
+    const characterImage = document.getElementById("characterImageOut");
+    characterImage.style.width = "300px";
+    characterImage.style.height = "auto";
+
+
+}
+
 /**
  * Display the rendering of the form in a readable and printable format.
  */
 function displayResult() {
+
+    formatCharacterImage()
+
     displayDemographic();
     displayAppearance();
     displayHistory();
@@ -184,5 +198,22 @@ function displayResult() {
 
 }
 
+
+
+
+
+// Display the rendering result when submit button is clicked
 const formSubmitButton = document.querySelector("#formsubmit");
 formSubmitButton.addEventListener("click", displayResult);
+
+// Display image from user input
+const characterImageIn = document.getElementById("characterImage");
+let characterImageOut = document.getElementById("characterImageOut");
+let characterImage;
+
+characterImageIn.addEventListener("change", () => {
+    const imgFiles = characterImageIn.files;
+    const characterImage = imgFiles[0];
+    characterImageOut.src = URL.createObjectURL(characterImage);
+    console.log(characterImage.size);
+})

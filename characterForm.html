@@ -8,13 +8,13 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en-us">
 
     <head>
         <meta http-equiv="Content-Type" content="text/html">
         <meta charset="utf-8">
         <meta name="description" content="Form for creating character profile.">
-        <script type = "text/javascript" src="printForm.js" defer></script>
+        <script type="text/javascript" src="printForm.js" defer></script>
         <title> Character Profile Form </title>
         <style id="styling">
             body {
@@ -78,6 +78,11 @@
             <input type="submit">
         </form> -->
 
+        <section id="inputImg">
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="characterImage">
+            <img id="characterImageOut">
+        </section>
+
         <form class="characterform" id="characterform">
 
             <section class="demographics">
@@ -91,6 +96,7 @@
                 <p><label class="demographicsInput"> Bloodline </label><input type="text" id="bloodline"> </p>
                 <p><label for="affiliation" class="demographicsInput"> Affiliation </label>
                     <select id="affiliation" name="affiliation">
+                        <option value="none" selected disabled hidden>Select an Option</option>
                         <option value="Eshasanti"> Eshasanti </option>
                         <option value="Sanyaseri"> Sanyaseri </option>
                         <option value="NonAffiliated"> No Affiliation </option>
@@ -131,6 +137,8 @@
                 <p><label class="historyInput"> Note </label><input type="text" id="historynote"> </p>
             </section>
 
+            <br>
+
             <section class="relationships">
                 <h2> Relationships </h2>
                 <p><label class="relationshipInput"> Father </label><input type="text" id="father"> </p>
@@ -161,6 +169,7 @@
         </form>
 
         <section class="displayOutput" id="dispOutput">
+
             <section>
                 <h2> Demographics </h2>
                 <p id="firstnameOut"><b> First name: </b></p>

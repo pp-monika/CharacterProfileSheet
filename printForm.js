@@ -43,7 +43,22 @@ function displayDemographic() {
 
 function displayAppearance() {
 
-    // Eyecolor
+    const eyecolorsRadio = document.getElementsByName("eyecolor");
+    if (eyecolorsRadio[0].checked) {
+        console.log("It is a text");
+        var color = document.getElementById("eyecolortext").value;
+        document.getElementById("eyecolorOut").insertAdjacentHTML("beforeend", color);
+    } else if (eyecolorsRadio[1].checked) {
+        console.log("This is from a wheel");
+        var color = document.getElementById("eyecolorwheel").value;
+        var colorname = ntc.name(color)[1];
+        document.getElementById("eyecolorOut").insertAdjacentHTML("beforeend", colorname + " (" + color + ") ");
+        const eyecolorSample = document.createElement("span");
+        eyecolorSample.innerHTML = "&nbsp; &nbsp; &nbsp;";
+        eyecolorSample.style.background = color;
+        document.getElementById("eyecolorOut").appendChild(eyecolorSample);
+
+    }
 
     const skincolor = document.getElementById("skincolor").value;
     document.getElementById("skincolorOut").insertAdjacentHTML("beforeend", skincolor);

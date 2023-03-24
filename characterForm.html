@@ -15,6 +15,7 @@
         <meta charset="utf-8">
         <meta name="description" content="Form for creating character profile.">
         <script type="text/javascript" src="printForm.js" defer></script>
+        <script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
         <title> Character Profile Form </title>
         <style id="styling">
             body {
@@ -67,7 +68,8 @@
             <p> Fill the character's information in the form and click submit for a final display. </p>
             <p> This form aim to help me explore characters' personality and possible development.
                 It can also be used for brainstorming character background, plot line, and interactions. </p>
-            <p> To save the result, select 'print' option from your browser after pressing Submit. </p>
+            <p> To save the result, select 'print' option from your browser after pressing Submit. To get
+                colors from color wheel, you must select background graphics when printing. </p>
         </header>
 
         <br>
@@ -79,6 +81,7 @@
         </form> -->
 
         <section id="inputImg">
+            <label for="characterImage"> Upload character image </label>
             <input type="file" accept="image/jpeg, image/png, image/jpg" id="characterImage">
             <img id="characterImageOut">
         </section>
@@ -111,7 +114,23 @@
 
             <section class="physAppearance">
                 <h2> Physical Appearance </h2>
-                <p><label class="physAppearanceInput"> Eye color </label><input type="text" id="eyecolor"> </p>
+                <p> Note: For all color field, choose only 1 way: text description of the color or colorwheel </p>
+                <p id="eyecolorSelector">
+                    <span class="physAppearanceInput"> Eye color </span>
+                    <input type="radio" id="radioeyecolortext" name="eyecolor"> <label for="eyecolortext"> Text description </label>
+                    <span> &Tab; </span>
+                    <input type="radio" id="radioeyecolorwheel" name="eyecolor"><label for="eyecolorwheel"> Choose from color wheel </label>
+                    <br>
+                </p>
+                <p id="selectedEyeColorInChoice"></p>
+
+                <!-- <p id="eyecolorIn">
+                    <label class="physAppearanceInput"> Eye color </label>
+                    <input type="text" id="eyecolortext">
+                    &nbsp; or find name from color wheel &nbsp;
+                    <input type="color" class="colorwheel" id="eyecolorwheel">
+                    <span id="eyecolorname"></span>
+                </p> -->
                 <p><label class="physAppearanceInput"> Skin color </label><input type="text" id="skincolor"> </p>
                 <p><label class="physAppearanceInput"> Hair color </label><input type="text" id="haircolor"> </p>
                 <p><label class="physAppearanceInput"> Height </label><input type="number" id="height"> </p>

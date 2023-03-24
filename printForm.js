@@ -1,4 +1,6 @@
 
+
+
 function displayDemographic() {
 
     document.getElementById("dispOutput").style.display = "inline";
@@ -41,8 +43,7 @@ function displayDemographic() {
 
 function displayAppearance() {
 
-    const eyecolor = document.getElementById("eyecolor").value;
-    document.getElementById("eyecolorOut").insertAdjacentHTML("beforeend", eyecolor);
+    // Eyecolor
 
     const skincolor = document.getElementById("skincolor").value;
     document.getElementById("skincolorOut").insertAdjacentHTML("beforeend", skincolor);
@@ -200,11 +201,10 @@ function displayResult() {
 
 
 
-
-
 // Display the rendering result when submit button is clicked
 const formSubmitButton = document.querySelector("#formsubmit");
 formSubmitButton.addEventListener("click", displayResult);
+
 
 // Display image from user input
 const characterImageIn = document.getElementById("characterImage");
@@ -217,3 +217,69 @@ characterImageIn.addEventListener("change", () => {
     characterImageOut.src = URL.createObjectURL(characterImage);
     console.log(characterImage.size);
 })
+
+
+// Activities on eyecolor radio button
+function eyecolorInputText() {
+
+    console.log("text field clicked");
+
+    const eyecolorTextBoxLabel = document.createElement("label");
+    eyecolorTextBoxLabel.className = "physAppearanceInput";
+    eyecolorTextBoxLabel.textContent = "Eye color description ";
+    eyecolorTextBoxLabel.style.marginLeft = "200px";
+
+    const eyecolorTextBox = document.createElement("input");
+    eyecolorTextBox.type = "text";
+    eyecolorTextBox.id = "eyecolortext";
+
+    document.getElementById("selectedEyeColorInChoice").innerHTML = "";
+    document.getElementById("selectedEyeColorInChoice").appendChild(eyecolorTextBoxLabel);
+    document.getElementById("selectedEyeColorInChoice").appendChild(eyecolorTextBox);
+    
+}
+
+function eyecolorInputWheel() {
+    
+    console.log("radiowheel clicked");
+    const eyecolorWheelLabel = document.createElement("label");
+    eyecolorWheelLabel.className = "physicalAppearanceInput";
+    eyecolorWheelLabel.textContent = "Select color from color wheel or enter HEX ";
+    eyecolorWheelLabel.style.marginLeft = "200px";
+
+    const eyecolorWheel = document.createElement("input");
+    eyecolorWheel.type = "color";
+    //eyecolorTextWheel.className = "colorwheel";
+    eyecolorWheel.id = "eyecolorwheel";
+
+    const eyecolorName = document.createElement("span");
+    eyecolorName.id = "eyecolorname";
+
+    document.getElementById("selectedEyeColorInChoice").innerHTML = "";
+    document.getElementById("selectedEyeColorInChoice").appendChild(eyecolorWheelLabel);
+    document.getElementById("selectedEyeColorInChoice").appendChild(eyecolorWheel);
+    document.getElementById("selectedEyeColorInChoice").appendChild(eyecolorName);
+
+    // Display realtime color name from color wheel's RGB
+    const colorWheel = document.getElementById("eyecolorwheel");
+    colorWheel.addEventListener("input", () => {
+        console.log("Use color picker");
+        console.log(colorWheel.value);
+        var colorData = ntc.name(colorWheel.value);
+        console.log(colorData);
+        var colorname = colorData[1];
+        document.getElementById("eyecolorname").innerHTML = "&nbsp;" + colorname;
+    });
+}
+
+const eyeColors = document.getElementsByName("eyecolor");
+eyeColors[0].addEventListener("click", eyecolorInputText);
+eyeColors[1].addEventListener("click", eyecolorInputWheel);
+
+
+
+
+
+
+
+
